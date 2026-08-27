@@ -1,7 +1,7 @@
 # Laravel Email Validation — Emailable Driver
 
 An [Emailable](https://emailable.com) deliverability driver for
-[`misaf/laravel-email-validation`](https://github.com/misaf/laravel-email-validation).
+[`misaf/laravel-email-verification`](https://github.com/misaf/laravel-email-verification).
 
 ## Features
 
@@ -14,12 +14,12 @@ An [Emailable](https://emailable.com) deliverability driver for
 
 - PHP 8.4+
 - Laravel 13
-- `misaf/laravel-email-validation`
+- `misaf/laravel-email-verification`
 
 ## Installation
 
 ```bash
-composer require misaf/laravel-email-validation-emailable
+composer require misaf/laravel-email-verification-emailable
 ```
 
 The service provider auto-registers and adds an `emailable` driver to the
@@ -34,12 +34,12 @@ EMAILABLE_API_KEY=your-key
 Publish the config to override credentials:
 
 ```bash
-php artisan vendor:publish --tag=laravel-email-validation-emailable-config
+php artisan vendor:publish --tag=laravel-email-verification-emailable-config
 ```
 
 ## Configuration
 
-`config/laravel-email-validation-emailable.php`:
+`config/laravel-email-verification-emailable.php`:
 
 - `host` — the Emailable verification endpoint, normally `https://api.emailable.com/v1/verify`
 - `api_key` — the private Emailable API key
@@ -61,8 +61,8 @@ produce `Unverifiable`. They are never treated as deliverable.
 ## Direct Usage
 
 ```php
-use Misaf\LaravelEmailValidation\Enums\EmailVerificationStatus;
-use Misaf\LaravelEmailValidation\Facades\EmailVerifier;
+use Misaf\LaravelEmailVerification\Enums\EmailVerificationStatus;
+use Misaf\LaravelEmailVerification\Facades\EmailVerifier;
 
 $status = EmailVerifier::driver('emailable')->verify('user@example.com');
 
@@ -74,12 +74,12 @@ if ($status === EmailVerificationStatus::Deliverable) {
 ## Contributing
 
 This repository is a read-only split of the
-[`misaf/laravel-email-validation`](https://github.com/misaf/laravel-email-validation)
+[`misaf/laravel-email-verification`](https://github.com/misaf/laravel-email-verification)
 monorepo, published for installation via Composer. Its contents are generated,
 so commits made here are overwritten by the next split.
 
 Open issues and pull requests against the monorepo, where this driver lives at
-`src/Verifiers/laravel-email-validation-emailable` and its tests run alongside the
+`src/Drivers/laravel-email-verification-emailable` and its tests run alongside the
 core package.
 
 ## License

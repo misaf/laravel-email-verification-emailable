@@ -1,5 +1,5 @@
 ---
-name: laravel-email-validation-emailable-development
+name: laravel-email-verification-emailable-development
 description: "Create, modify, review, or test the optional Emailable driver in the package root. Trigger for EmailableEmailVerifier, EmailableServiceProvider, Emailable API configuration, email-verification response mapping, HTTP retries or timeouts, and Emailable driver tests."
 ---
 
@@ -7,22 +7,22 @@ description: "Create, modify, review, or test the optional Emailable driver in t
 
 ## Workflow
 
-Use this skill together with `laravel-email-validation-development`, `laravel-best-practices`, and `pest-testing` whenever tests change. Before code changes, use Laravel Boost `application-info` and `search-docs`; consult current official Emailable API documentation before changing response semantics.
+Use this skill together with `laravel-email-verification-development`, `laravel-best-practices`, and `pest-testing` whenever tests change. Before code changes, use Laravel Boost `application-info` and `search-docs`; consult current official Emailable API documentation before changing response semantics.
 
 ## Module Boundary
 
 Treat `the package root` as an optional concrete provider.
 
-- Use namespace `Misaf\LaravelEmailValidationEmailable`.
+- Use namespace `Misaf\LaravelEmailVerificationEmailable`.
 - Own only `EmailableEmailVerifier`, its config, tests, and driver registration in `EmailableServiceProvider`.
-- Depend on `misaf/laravel-email-validation` and implement its `EmailVerifier` contract.
+- Depend on `misaf/laravel-email-verification` and implement its `EmailVerifier` contract.
 - Never move Emailable HTTP logic, credentials, or dependencies into the core package.
 - Do not depend on other packages you do not need.
 
 ## Driver Semantics
 
 - Register the driver as `emailable` through `EmailVerifierManager::extend()`.
-- Read `host` and `api_key` from `laravel-email-validation-emailable` using typed configuration access.
+- Read `host` and `api_key` from `laravel-email-verification-emailable` using typed configuration access.
 - Map `deliverable` to `Deliverable`, `undeliverable` to `Undeliverable`, and `risky` to `Risky`.
 - Map `unknown`, unrecognized states, malformed payloads, unsuccessful responses, timeouts, and exceptions to `Unverifiable`.
 - Never report an ambiguous or failed verification as `Deliverable`.

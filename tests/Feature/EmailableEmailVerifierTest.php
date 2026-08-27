@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Misaf\LaravelEmailValidation\EmailVerifierManager;
-use Misaf\LaravelEmailValidation\Enums\EmailVerificationStatus;
-use Misaf\LaravelEmailValidationEmailable\EmailableEmailVerifier;
+use Misaf\LaravelEmailVerification\EmailVerifierManager;
+use Misaf\LaravelEmailVerification\Enums\EmailVerificationStatus;
+use Misaf\LaravelEmailVerificationEmailable\EmailableEmailVerifier;
 
 beforeEach(function (): void {
     config([
-        'laravel-email-validation-emailable.host'    => 'https://api.emailable.test/verify',
-        'laravel-email-validation-emailable.api_key' => 'test-key',
+        'laravel-email-verification-emailable.host'    => 'https://api.emailable.test/verify',
+        'laravel-email-verification-emailable.api_key' => 'test-key',
     ]);
 });
 

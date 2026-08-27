@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Misaf\LaravelEmailValidationEmailable;
+namespace Misaf\LaravelEmailVerificationEmailable;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Misaf\LaravelEmailValidation\Contracts\EmailVerifier;
-use Misaf\LaravelEmailValidation\Enums\EmailVerificationStatus;
+use Misaf\LaravelEmailVerification\Contracts\EmailVerifier;
+use Misaf\LaravelEmailVerification\Enums\EmailVerificationStatus;
 use Throwable;
 
 /**

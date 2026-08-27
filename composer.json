@@ -1,6 +1,6 @@
 {
-    "name": "misaf/laravel-email-validation-emailable",
-    "description": "Emailable deliverability driver for Laravel email validation",
+    "name": "misaf/laravel-email-verification-emailable",
+    "description": "Emailable deliverability driver for Laravel email verification",
     "license": "MIT",
     "type": "library",
     "keywords": [
@@ -17,23 +17,23 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/misaf/laravel-email-validation-emailable",
+    "homepage": "https://github.com/misaf/laravel-email-verification-emailable",
     "support": {
-        "issues": "https://github.com/misaf/laravel-email-validation-emailable/issues",
-        "source": "https://github.com/misaf/laravel-email-validation-emailable"
+        "issues": "https://github.com/misaf/laravel-email-verification-emailable/issues",
+        "source": "https://github.com/misaf/laravel-email-verification-emailable"
     },
     "require": {
         "php": "^8.4",
         "illuminate/http": "^13.0",
         "illuminate/support": "^13.0",
-        "misaf/laravel-email-validation": "^1.0",
+        "misaf/laravel-email-verification": "^1.0",
         "spatie/laravel-package-tools": "^1.93"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Misaf\\LaravelEmailValidationEmailable\\": "src/"
+            "Misaf\\LaravelEmailVerificationEmailable\\": "src/"
         }
     },
     "config": {
@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Misaf\\LaravelEmailValidationEmailable\\Providers\\EmailableServiceProvider"
+                "Misaf\\LaravelEmailVerificationEmailable\\Providers\\EmailableServiceProvider"
             ]
         }
     },
