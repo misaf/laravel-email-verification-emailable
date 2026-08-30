@@ -20,7 +20,9 @@ final class EmailableServiceProvider extends PackageServiceProvider
             ->name('laravel-email-verification-emailable')
             ->hasConfigFile()
             ->hasInstallCommand(function (InstallCommand $command): void {
-                $command->askToStarRepoOnGitHub('misaf/laravel-email-verification-emailable');
+                $command
+                    ->publishConfigFile()
+                    ->askToStarRepoOnGitHub('misaf/laravel-email-verification-emailable');
             });
     }
 
